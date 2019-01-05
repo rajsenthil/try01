@@ -1,0 +1,2 @@
+include ":framework:service"
+project(":framework:service").projectDir = file("../../framework")
