@@ -1,8 +1,6 @@
 package com.senthil.presto.coding.config;
 
-import com.senthil.presto.coding.beans.Item;
 import com.senthil.presto.coding.beans.Menu;
-import com.senthil.presto.coding.boot.Boot;
 import com.senthil.presto.coding.dao.H2MenuDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

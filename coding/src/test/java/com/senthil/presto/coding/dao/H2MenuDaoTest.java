@@ -1,6 +1,5 @@
 package com.senthil.presto.coding.dao;
 
-import com.senthil.presto.coding.boot.Boot;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +26,17 @@ public class H2MenuDaoTest {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    @Test
+    public void queryItemss() {
+        H2MenuDao h2MenuDao = new H2MenuDao();
+        try {
+            h2MenuDao.items(1);
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            e.printStackTrace();
         }
     }
 }

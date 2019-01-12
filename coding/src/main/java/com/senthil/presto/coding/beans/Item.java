@@ -1,11 +1,12 @@
 package com.senthil.presto.coding.beans;
 
-import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 public class Item {
     private int id;
     private String name;
-    private List<Item> modifiers;
+    private Set<Item> modifiers;
     private boolean isModifier;
 
     public int getId() {
@@ -26,11 +27,11 @@ public class Item {
         return this;
     }
 
-    public List<Item> getModifiers() {
+    public Set<Item> getModifiers() {
         return modifiers;
     }
 
-    public Item setModifiers(List<Item> modifiers) {
+    public Item setModifiers(Set<Item> modifiers) {
         this.modifiers = modifiers;
         return this;
     }
@@ -39,8 +40,24 @@ public class Item {
         return isModifier;
     }
 
-    public Item setIsModifier(boolean isModifier) {
-        this.isModifier = isModifier;
+    public Item setModifier(boolean modifier) {
+        isModifier = modifier;
         return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) return true;
+            if (!(o instanceof Item)) {
+            return false;
+        }
+        Item item = (Item) o;
+        return id == item.id && Objects.equals(name, item.name) && Objects.equals(isModifier, item.isModifier) && Objects.equals(isModifier, item.isModifier);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, isModifier);
     }
 }
