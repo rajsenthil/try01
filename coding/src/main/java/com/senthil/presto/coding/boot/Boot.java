@@ -15,26 +15,32 @@ import java.io.File;
 public class Boot {
 
     private Logger logger = LoggerFactory.getLogger(Boot.class.getName());
+    private Server jettyServer = new Server(8080);
 
     public void startJettyServer() throws Exception {
         logger.info("Starting jetty server");
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
 
-        Server jettyServer = new Server(8080);
         jettyServer.setHandler(context);
 
         ServletHolder jerseyServlet = context.addServlet(org.glassfish.jersey.servlet.ServletContainer.class, "/*");
         jerseyServlet.setInitOrder(0);
-
         jerseyServlet.setInitParameter( "jersey.config.server.provider.classnames", MenuService.class.getCanonicalName());
 
         try {
             jettyServer.start();
             jettyServer.join();
-        } finally {
+        } catch (Exception ex){
+            logger.error(ex.getMessage());
             jettyServer.destroy();
         }
+        logger.info("Jetty server running...");
+    }
+
+    public void stopJettyServer() throws Exception {
+        jettyServer.destroy();
+        logger.info("Jetty server stopped.");
     }
 
     public void startH2Server() throws Exception {

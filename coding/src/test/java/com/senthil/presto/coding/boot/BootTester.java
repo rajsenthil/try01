@@ -3,10 +3,16 @@ package com.senthil.presto.coding.boot;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.senthil.presto.coding.beans.Menu;
 import com.senthil.presto.coding.dao.H2MenuDao;
+import org.glassfish.jersey.client.ClientConfig;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.io.File;
 import java.io.IOException;
 
@@ -14,7 +20,7 @@ public class BootTester {
     private Logger logger = LoggerFactory.getLogger(BootTester.class.getName());
 
     @Test
-    public void testBoot() {
+    public void testH2Boot() {
         Boot boot = new Boot();
         try {
             //1. Start h2 server
@@ -23,7 +29,7 @@ public class BootTester {
 //            boot.bootMenus();
             H2MenuDao h2MenuDao = new H2MenuDao();
             try {
-                Menu menu = h2MenuDao.getMenu(1);
+                Menu menu = h2MenuDao.getMenu(0,1);
 //                h2MenuDao.items(1);
 
                 String path = "dbMenu.json";
@@ -45,4 +51,19 @@ public class BootTester {
         }
     }
 
+    @Test
+    public void testJettyBoot() {
+        Boot boot = new Boot();
+        try {
+            logger.info("testing the jetty server");
+            boot.startJettyServer();
+            logger.info("configuring the jetty server");
+            ClientConfig config = new ClientConfig();
+            Client client = ClientBuilder.newClient(config);
+            WebTarget target = client.target("http://localhost:8080/");
+        }catch (Exception ex) {
+            logger.error(ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
 }

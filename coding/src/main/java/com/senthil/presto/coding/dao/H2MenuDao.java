@@ -78,9 +78,9 @@ public class H2MenuDao {
         }
     }
 
-    public Menu getMenu(int menuId) throws Exception {
+    public Menu getMenu(int restaurantId, int menuId) throws Exception {
         Statement statement = getConnection().createStatement();
-        ResultSet rs = statement.executeQuery(SELECT_MENU+menuId);
+        ResultSet rs = statement.executeQuery(SELECT_MENU+menuId + " AND RESTAURANT_ID = "+restaurantId);
         if (!rs.next()) throw new NotFoundException("Menu id "+menuId+" not found");
         Menu menu = new Menu();
         //RESTAURANT_ID, NAME, MENU_TYPE
