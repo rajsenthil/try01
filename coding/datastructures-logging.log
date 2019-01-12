@@ -1,0 +1,32 @@
+2019-01-11 17:53:26 INFO  H2MenuDaoTest:41 - Starting h2 db...
+2019-01-11 17:53:28 INFO  H2MenuDaoTest:44 - Started h2 db.
+2019-01-11 17:53:28 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 17:53:28 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 17:53:28 INFO  H2MenuDaoTest:49 - Created tables...
+2019-01-11 17:53:28 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 17:53:28 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 17:53:28 INFO  H2MenuDaoTest:52 - ... and dropped them.
+2019-01-11 18:01:49 INFO  MenuLoaderTest:17 - Starting h2 db...
+2019-01-11 18:01:50 INFO  MenuLoaderTest:20 - Started h2 db.
+2019-01-11 18:01:51 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 18:01:51 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 18:01:51 INFO  MenuLoader:23 - Created tables...
+2019-01-11 18:01:51 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 18:01:51 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 18:01:51 INFO  MenuLoader:27 - ... and dropped them.
+2019-01-11 18:05:52 INFO  MenuLoaderTest:15 - Starting h2 db...
+2019-01-11 18:05:53 INFO  MenuLoaderTest:18 - Started h2 db.
+2019-01-11 18:05:54 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 18:05:54 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 18:05:54 INFO  MenuLoader:27 - Created tables...
+2019-01-11 18:05:54 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 18:05:54 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 18:05:54 INFO  MenuLoader:33 - ... and dropped them.
+2019-01-11 18:10:04 INFO  MenuLoaderTest:15 - Starting h2 db...
+2019-01-11 18:10:06 INFO  MenuLoaderTest:18 - Started h2 db.
+2019-01-11 18:10:06 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 18:10:06 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 18:10:06 INFO  MenuLoader:27 - Created tables...
+2019-01-11 18:10:07 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 18:10:07 INFO  H2MenuDao:30 - Connection Established: H2/MENU
+2019-01-11 18:10:07 INFO  MenuLoader:33 - ... and dropped them.
