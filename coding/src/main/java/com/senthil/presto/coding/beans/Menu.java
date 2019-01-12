@@ -7,7 +7,7 @@ public class Menu {
     private String name;
     private MenuType menuType;
 
-    private Item root;
+    private Item item;
 
     //TODO: Allow CRUD operations to the menu items
     //      These operations will be done by Restaurant admin, in a access controlled screen.
@@ -56,12 +56,12 @@ public class Menu {
         return this;
     }
 
-    public Item getRoot() {
-        return root;
+    public Item getItem() {
+        return item;
     }
 
-    public Menu setRoot(Item root) {
-        this.root = root;
+    public Menu setItem(Item item) {
+        this.item = item;
         return this;
     }
 }

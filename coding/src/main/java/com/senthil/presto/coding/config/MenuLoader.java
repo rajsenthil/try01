@@ -1,5 +1,7 @@
 package com.senthil.presto.coding.config;
 
+import com.senthil.presto.coding.beans.Item;
+import com.senthil.presto.coding.beans.Menu;
 import com.senthil.presto.coding.boot.Boot;
 import com.senthil.presto.coding.dao.H2MenuDao;
 import org.slf4j.Logger;
@@ -27,17 +29,13 @@ public class MenuLoader {
         logger.info("Created tables...");
     }
 
-    public void populateTables() {
-        populateMenuTable();
-        populateMenuItemTable();
+    public void populateTables(Menu menu) throws Exception {
+        logger.info("Loading menu data...");
+        int menuId = h2MenuDao.insertMenu(menu);
+        h2MenuDao.insertMenuItem(menu.getItem(), menuId, 0);
+        logger.info("done.");
     }
 
-    private void populateMenuTable() {
-        String INSERT_MENU = "INSERT INTO Menu (RESTAURANT_ID, NAME, MENU_TYPE) values (1, 'The Restaurant', 'FOOD')";
-    }
-
-    private void populateMenuItemTable() {
-    }
 
     public void dropTables() throws Exception {
         h2MenuDao.executeStatement(DROP_TABLE_ITEM);

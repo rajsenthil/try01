@@ -22,7 +22,7 @@ public class TestUtils {
         Item appetizers = new Item().setId(4).setIsModifier(false).setName("appetizers");
         Item desserts = new Item().setId(5).setIsModifier(false).setName("desserts");
 
-        menu.setId(0).setMenuType(MenuType.FOOD).setName("Foods").setRoot(food);
+        menu.setId(0).setMenuType(MenuType.FOOD).setName("Foods").setItem(food);
 
         List<Item> items = new ArrayList();
         items.add(appetizers);
