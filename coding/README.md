@@ -58,6 +58,13 @@ http://localhost:8080/menu/0/1
 The tests cases are not really unit cases but more for testing the function.
 This is to speed up the setup and testing
 
+## Things that have been tried better
+
+* Started the Menu design as Tree datastructure, graph would have better choice.
+* Ports for jetty and h2 db, needs to configurable.
+* Unit tests were not actually unit cases.   
+ 
+
 ## Authors
 
 * **Senthil Rajendran** - *Initial work* - [rajsenthil](https://github.com/rajsenthil/try01/tree/master/coding)
