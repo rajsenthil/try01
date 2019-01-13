@@ -4,6 +4,7 @@ import com.senthil.presto.coding.beans.Item;
 import com.senthil.presto.coding.beans.Menu;
 import com.senthil.presto.coding.beans.MenuType;
 import com.senthil.presto.coding.boot.Boot;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,11 +12,13 @@ import org.slf4j.LoggerFactory;
 import java.util.HashSet;
 import java.util.Set;
 
+@Disabled
 public class MenuLoaderTest {
 
     private Logger logger = LoggerFactory.getLogger(MenuLoaderTest.class.getName());
 
-    @Test
+     @Disabled
+//    @Test
     public void testCreateTable() {
         try {
             logger.info("Starting h2 db...");
@@ -31,6 +34,8 @@ public class MenuLoaderTest {
         }
     }
 
+
+    @Disabled
 //    @Test
     public void testDropTables() {
         try {
@@ -42,7 +47,8 @@ public class MenuLoaderTest {
         }
     }
 
-    @Test
+    @Disabled
+//    @Test
     public void testLoadMenuData() {
         logger.info("Loading test data...");
         Menu menu = getTestMenu();

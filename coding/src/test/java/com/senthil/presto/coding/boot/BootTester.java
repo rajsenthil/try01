@@ -57,13 +57,15 @@ public class BootTester {
         try {
             logger.info("testing the jetty server");
             boot.startJettyServer();
-            logger.info("configuring the jetty server");
-            ClientConfig config = new ClientConfig();
-            Client client = ClientBuilder.newClient(config);
-            WebTarget target = client.target("http://localhost:8080/");
         }catch (Exception ex) {
             logger.error(ex.getMessage());
             ex.printStackTrace();
+            try {
+                boot.stopJettyServer();
+            } catch (Exception e) {
+                logger.error(e.getMessage());
+                e.printStackTrace();
+            }
         }
     }
 }
